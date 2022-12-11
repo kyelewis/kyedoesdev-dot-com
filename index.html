@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>kyedoesdev blog</title>
+    <style>
+      #columns {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-gap: 10px;        
+      }
+      
+      #blog_app {
+        border-left: 3px solid red;
+        background-color: #CCC;
+        padding: 5px;
+        border-radius: 4px;
+        font-family: monospace;
+        white-space: pre;
+      }
+      </style>
+  </head>
+  <body>
+    <h1>kyedoesdev blog</h1>
+    <div id="columns">
+      <section id="blog_posts"></section>
+      <section id="blog_app"></section>
+    </div>
+    <script type="module">
+      import init, { render } from "./pkg/app.js";
+      await init();
+      render("blog_posts", "blog_app", "hello")
+    </script>
+  </body>
+</html>
